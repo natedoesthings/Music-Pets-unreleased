@@ -1,0 +1,17 @@
+.main {
+  background: darkslategrey;
+}
+
+.animated {
+  transition: transform 0.3s ease-in-out; /* Define the animation properties */
+}
+
+.animated:hover {
+  transform: translateY(-5px); /* Apply the upward translation on hover */
+}
+
+
+.custom-white {
+  background-color: whitesmoke; /* Replace this with your desired dark green color */
+  /* You can add more styles as needed */
+}
