@@ -1,11 +1,11 @@
 import Link from "next/link"
-import './styles.css'
+import './before.css'
 
-const BeforeLogin = () => {
+const BeforeLogin = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE}) => {
   return (
 
     <main className="main">
-      <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
+      <nav className="z-0 navbar navbar-expand-lg fixed-top" style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">MusicPets.io</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@ const BeforeLogin = () => {
                 <Link className="nav-link active" href="#scrollspyHeading2">Contact</Link>
               </li>
             </ul>
-            <Link href={`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID_NATE}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${process.env.RESPONSE_TYPE}&scope=${process.env.SCOPE}`}
+            <Link href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
               className="btn btn-success fs-5" role="button">
               Login</Link>
           </div>
@@ -35,7 +35,7 @@ const BeforeLogin = () => {
           </h1>
 
           <div>
-            <Link href={`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID_NATE}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${process.env.RESPONSE_TYPE}&scope=${process.env.SCOPE}`}
+            <Link href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
               className="btn btn-success fs-5 animated" role="button">
               Connect your Spotify!
               <span className='invisible'>""</span>
@@ -49,7 +49,7 @@ const BeforeLogin = () => {
       </div>
 
 
-      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3" tabindex="0">
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example p-3" tabIndex="0">
       <h1 id="scrollspyHeading1" className="display-4 invisible">About</h1>
         <h1 id="scrollspyHeading1" className="display-2 text-white">About</h1>
         <p className="text-white">

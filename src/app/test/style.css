@@ -1,0 +1,41 @@
+
+.animated {
+  transition: transform 0.3s ease-in-out; /* Define the animation properties */
+}
+
+.animated:hover {
+  transform: translateY(-5px); /* Apply the upward translation on hover */
+}
+
+
+.custom-white {
+  background-color: whitesmoke; /* Replace this with your desired dark green color */
+  /* You can add more styles as needed */
+}
+
+section {
+  background-color: darkslategrey;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+.background {
+  background-image: url('./imgs/image.jpg');
+  position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-position: center center;
+	min-height: 100%; 
+}
+
+header {
+
+}
