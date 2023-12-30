@@ -1,8 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body {
   background-color: darkslategray;
-}
-.main {
-  background: darkslategrey;
 }
 
 .animated {
@@ -19,3 +17,11 @@ body {
   /* You can add more styles as needed */
 }
 
+.credits {
+  position: absolute;
+  width: 100%;
+  height: 400px; /* Adjust the height as per your preference */
+  background-color: rgb(35, 59, 59);
+  top: 2500px;
+
+}

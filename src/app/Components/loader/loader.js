@@ -12,7 +12,7 @@ const Loader = () => {
 
         setTimeout(() => {
           loaderWrapper.style.display = 'none';
-        }, 500); // Timeout to hide the loader after fading out
+        }, 5000); // Timeout to hide the loader after fading out
       }
     };
 
@@ -25,7 +25,7 @@ const Loader = () => {
       if (loaderWrapper) {
         loaderWrapper.style.display = 'none';
       }
-    }, 2500); // Timeout to remove the loader after 2.5 seconds (adjust as needed)
+    }, 5000); // Timeout to remove the loader after 2.5 seconds (adjust as needed)
 
     // Clean-up logic to clear the timeout
     return () => clearTimeout(removeLoader);

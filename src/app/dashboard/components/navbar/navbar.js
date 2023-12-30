@@ -1,8 +1,8 @@
-"use client"
+'use client'
 import { useEffect } from "react";
-import './after.css'
 
-const AfterLogin = ({ func, token }) => {
+const NavBar = ({name, image, profile}) => {
+
   useEffect(() => {
     const body = document.querySelector('body'),
       sidebar = body.querySelector('nav'),
@@ -31,38 +31,19 @@ const AfterLogin = ({ func, token }) => {
       toggle.removeEventListener('click', toggleSidebar);
       modeSwitch.removeEventListener('click', toggleDarkMode);
     };
+
   }, []);
 
   return (
-    <main>
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onClick={func}>Understood</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-      <nav class="sidebar close">
+    <nav class="sidebar close">
         <header>
             <div class="image-text">
                 <span class="image">
+                <img src={image} alt="Profile Picture"></img>
                 </span>
                 <div class="text logo-text">
-                    <span class="name">Codinglab</span>
-                    <span class="profession">Web developer</span>
+                    <a class="name link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href={profile}>{name}</a>
+                    
                 </div>
             </div>
             <i class='bx bx-chevron-right toggle'></i>
@@ -110,7 +91,7 @@ const AfterLogin = ({ func, token }) => {
             </div>
             <div class="bottom-content">
                 <li class="">
-                    <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <a type="button">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -129,18 +110,8 @@ const AfterLogin = ({ func, token }) => {
             </div>
         </div>
     </nav>
-    <section class="home">
-        <div class="text">Dashboard Sidebar</div>
-    </section> 
-
-
-
-
-
-
-
-    </main>
   )
+
 }
 
-export default AfterLogin
+export default NavBar
