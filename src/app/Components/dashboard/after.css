@@ -1,5 +1,4 @@
 /* Google Font Import - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +10,7 @@
     /* ===== Colors ===== */
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
-    --primary-color: #695CFE;
+    --primary-color: darkslategray;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
@@ -96,6 +95,9 @@ body.dark{
     white-space: nowrap;
     opacity: 1;
 }
+
+
+
 .sidebar.close .text{
     opacity: 0;
 }
@@ -313,3 +315,65 @@ body.dark .home .text{
   padding-left: 0px; 
 }
 
+.scrollable-container {
+    max-height: 300px; /* Adjust the height as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+  
+  .scrollable-content {
+    padding: 8px;
+    overflow-y: auto;
+  }
+  
+  /* Optional: Style the list items */
+  .scrollable-content ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .scrollable-content li {
+    margin-bottom: 8px;
+  }
+  
+  .scrollable-content a {
+    text-decoration: none;
+    color: #333;
+    /* Add any other styles you want for the links */
+  }
+  
+  /* Styling for the "No tracks available" message */
+  .scrollable-content li.no-tracks {
+    color: #999;
+  }
+
+.positioning {
+    width: 90%;
+    position: relative;
+    left: 50px
+}
+
+/* Custom styles for the carousel */
+.custom-carousel {
+    max-width: 500px;
+    background-color: darkgray; 
+    border: #18191a;
+    border-width: 5px;
+    border-radius: 10px;/* Set the maximum width */
+  }
+  
+  .custom-carousel .carousel-item img {
+    /* Adjust the image size within carousel items */
+    max-width: 100%;
+    height: auto;
+    z-index: 50;
+  
+  }
+  .bottom-left-carousel {
+    position: fixed;
+    bottom: 100px;
+    left: 250px;
+    margin: 20px; /* Adjust margins as needed */
+  }

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import './before.css'
 
-const BeforeLogin = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE}) => {
+const HomeScreen = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE}) => {
   return (
 
     <main className="main">
@@ -66,8 +66,8 @@ const BeforeLogin = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE}
           In conclusion, storytelling is a thread that weaves through the fabric of human existence, connecting us, shaping our identities, and fostering empathy. It's a potent tool that educates, inspires, and unites, reminding us of our shared humanity. Embracing the diversity of stories enriches our lives, broadens our understanding, and ultimately propels us toward a more empathetic and interconnected world.
         </p>
 
-        <h1 id="scrollspyHeading2" className="display-2 text-white">Contact</h1>
-        <p className="text-white">
+        <h1 id="scrollspyHeading2" className="display-2 text-white text-end">Contact</h1>
+        <p className="text-white text-end">
           Storytelling, an ancient and fundamental aspect of human communication, serves as the linchpin of our collective experiences. It's not merely the transmission of events or facts but a gateway to emotions, beliefs, and shared values. Through narratives, whether passed down through generations or woven into contemporary forms, we glimpse into diverse worlds, perspectives, and cultures.
 
           Stories possess an unparalleled power to transcend boundaries. They bridge gaps between individuals, cultures, and generations, fostering empathy and understanding. When we immerse ourselves in a story, whether through literature, film, or oral tradition, we inhabit the lives and emotions of characters, broadening our perspectives. We connect with their struggles, triumphs, fears, and aspirations, realizing the universality of human experiences.
@@ -84,9 +84,11 @@ const BeforeLogin = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE}
       </div>
 
 
+      <div className="credits">
 
+      </div>
     </main>
   )
 }
 
-export default BeforeLogin
+export default HomeScreen

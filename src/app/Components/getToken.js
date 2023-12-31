@@ -2,8 +2,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import BeforeLogin from "./before/beforeLogin"
-import AfterLogin from "./after/afterLogin"
+import HomeScreen from "./homescreen/homescreen"
+import Dashboard from "./dashboard/dashboard";
 
 
 const GetToken = ({ CLIENT_ID, AUTH_ENDPOINT, REDIRECT_URI, RESPONSE_TYPE, SCOPE }) => {
@@ -38,7 +38,7 @@ const GetToken = ({ CLIENT_ID, AUTH_ENDPOINT, REDIRECT_URI, RESPONSE_TYPE, SCOPE
     <main>
       {!token ?
 
-        <BeforeLogin
+        <HomeScreen
           AUTH_ENDPOINT={AUTH_ENDPOINT}
           CLIENT_ID={CLIENT_ID}
           REDIRECT_URI={REDIRECT_URI}
@@ -46,7 +46,7 @@ const GetToken = ({ CLIENT_ID, AUTH_ENDPOINT, REDIRECT_URI, RESPONSE_TYPE, SCOPE
           SCOPE={SCOPE}
         /> :
         <main>
-          <AfterLogin 
+          <Dashboard 
           func={logout} 
           token={token}/>
         </main>
