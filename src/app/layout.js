@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import BootstrapClient from '@/bootstrap/bootstrapclient';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
       <head>
       <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'></link>
       </head>
-      <body className={inter.className}>{children} <BootstrapClient /> <Analytics/> </body>
+      <body className={inter.className}>{children} <BootstrapClient /> <Analytics/> <SpeedInsights/></body>
     </html>
     
   )
