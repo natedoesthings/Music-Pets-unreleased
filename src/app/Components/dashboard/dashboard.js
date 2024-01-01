@@ -5,37 +5,7 @@ import Recommend from "../recommendations/recommend";
 import NavBar from "../navbar/navbar";
 
 const Dashboard = ({ func, token }) => {
-  useEffect(() => {
-    const body = document.querySelector('body'),
-      sidebar = body.querySelector('nav'),
-      toggle = body.querySelector('.toggle'),
-      modeSwitch = body.querySelector('.toggle-switch'),
-      modeText = body.querySelector('.mode-text');
-
-    const toggleSidebar = () => {
-      sidebar.classList.toggle('close');
-    };
-
-    const toggleDarkMode = () => {
-      body.classList.toggle('dark');
-
-      if (body.classList.contains('dark')) {
-        modeText.innerText = 'Light mode';
-      } else {
-        modeText.innerText = 'Dark mode';
-      }
-    };
-
-    toggle.addEventListener('click', toggleSidebar);
-    modeSwitch.addEventListener('click', toggleDarkMode);
-
-    return () => {
-      toggle.removeEventListener('click', toggleSidebar);
-      modeSwitch.removeEventListener('click', toggleDarkMode);
-    };
-
-
-  }, []);
+ 
 
   const [name, setName] = useState('');
   const [image, setImg] = useState('');
@@ -194,10 +164,10 @@ const Dashboard = ({ func, token }) => {
       <NavBar image={image} profile={profile} name={name}/>
 
       <section class="home">
-        <div class="text">Dashboard Sidebar</div>
+        <div class="text">Dashboard</div>
         <div class="hstack gap-3 positioning">
 
-          <p className="text">Your Top Tracks! </p>
+          <p className="text text-small">Your Top Tracks! </p>
           <div className="scrollable-container">
             <div className="scrollable-content">
               <ol>
@@ -212,7 +182,7 @@ const Dashboard = ({ func, token }) => {
                 )}
               </ol>
 
-            </div>
+            </div> 
           </div>
           <p className="text-small">Your Top Artists!</p>
           <div className="scrollable-container">

@@ -14,6 +14,7 @@
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --item-color: black;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -40,6 +41,7 @@ body.dark{
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
     --text-color: #ccc;
+    --item-color: white;
 }
 
 /* ===== Sidebar ===== */
@@ -95,6 +97,7 @@ body.dark{
     white-space: nowrap;
     opacity: 1;
 }
+
 
 
 
@@ -301,6 +304,13 @@ body.dark .switch::before{
     padding: 12px 60px;
 }
 
+.home .text-small{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0;
+}
+
 .sidebar.close ~ .home{
     left: 78px;
     height: 100vh;
@@ -338,9 +348,10 @@ body.dark .home .text{
     margin-bottom: 8px;
   }
   
-  .scrollable-content a {
+  .scrollable-content a, 
+  .scrollable-content p{
     text-decoration: none;
-    color: #333;
+    color: var(--item-color);
     /* Add any other styles you want for the links */
   }
   
@@ -377,3 +388,5 @@ body.dark .home .text{
     left: 250px;
     margin: 20px; /* Adjust margins as needed */
   }
+
+  

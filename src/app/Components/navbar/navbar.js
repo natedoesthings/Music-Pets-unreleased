@@ -1,13 +1,51 @@
+'use client'
+import { useEffect, useState } from "react";
+
 const NavBar = ({image, profile, name}) => {
+
+  useEffect(() => {
+    const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector('.toggle'),
+      modeSwitch = body.querySelector('.toggle-switch'),
+      modeText = body.querySelector('.mode-text');
+
+    const toggleSidebar = () => {
+      sidebar.classList.toggle('close');
+    };
+
+    const toggleDarkMode = () => {
+      body.classList.toggle('dark');
+
+      if (body.classList.contains('dark')) {
+        modeText.innerText = 'Light mode';
+      } else {
+        modeText.innerText = 'Dark mode';
+      }
+    };
+
+    toggle.addEventListener('click', toggleSidebar);
+    modeSwitch.addEventListener('click', toggleDarkMode);
+
+    return () => {
+      toggle.removeEventListener('click', toggleSidebar);
+      modeSwitch.removeEventListener('click', toggleDarkMode);
+    };
+
+
+  }, []);
+
   return (
     <nav class="sidebar close">
         <header>
           <div class="image-text">
             <span class="image">
+              <a href={profile}>
               <img src={image} alt="Profile Picture"></img>
+              </a>
             </span>
             <div class="text logo-text">
-              <a class="name link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" href={profile}>{name}</a>
+              <a class="name link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">{name}</a>
             </div>
           </div>
           <i class='bx bx-chevron-right toggle'></i>
