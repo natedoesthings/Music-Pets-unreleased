@@ -7,22 +7,32 @@ import Dashboard from "./dashboard/dashboard";
 
 
 const GetToken = ({ CLIENT_ID, AUTH_ENDPOINT, REDIRECT_URI, RESPONSE_TYPE, SCOPE }) => {
-  
-    const storedToken = window.localStorage.getItem("token");
-    const [token, setToken] = useState(storedToken || "");
+    const [token, setToken] = useState("");
 
     useEffect(() => {
-      const hash = window.location.hash;
-      if (!token && hash) {
-        const newToken = hash
-          .substring(1)
-          .split("&")
-          .find((elem) => elem.startsWith("access_token"))
-          .split("=")[1];
+      if (typeof window !== 'undefined') {
+        const storedToken = window.localStorage.getItem("token");
+        if(!storedToken) {
+          const hash = window.location.hash;
 
-        window.location.hash = "";
-        window.localStorage.setItem("token", newToken);
-        setToken(newToken);
+          if (!token && hash) {
+            const newToken = hash
+              .substring(1)
+              .split("&")
+              .find((elem) => elem.startsWith("access_token"))
+              .split("=")[1];
+  
+            window.location.hash = "";
+            window.localStorage.setItem("token", newToken);
+            setToken(newToken);
+          }
+        }
+        else {
+          setToken(storedToken)
+        }
+
+        
+        
       }
     }, [token]);
 
@@ -33,7 +43,7 @@ const GetToken = ({ CLIENT_ID, AUTH_ENDPOINT, REDIRECT_URI, RESPONSE_TYPE, SCOPE
       }, 500);
 
     };
-    
+
   return (
     <main>
       {!token ?

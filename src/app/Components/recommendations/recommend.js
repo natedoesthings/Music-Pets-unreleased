@@ -1,3 +1,4 @@
+import Image from "next/image"
 
 const Recommend = ({recommendations}) => {
     return (
@@ -8,7 +9,7 @@ const Recommend = ({recommendations}) => {
             <div class="carousel-item active">
             <div className='d-flex align-items-center'>
               <a>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/600px-Simple_Music.svg.png" class="d-block w-100" alt="..."></img>
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/600px-Simple_Music.svg.png" class="d-block w-100" alt="..." width={600} height={600}></Image>
               </a>
               <div class="vstack gap-3">
                 <h4 className='text-white ms-3 p-2'>Swipe For Music Recommendations</h4>
@@ -25,7 +26,7 @@ const Recommend = ({recommendations}) => {
                 <div class="carousel-item">
                   <div className='d-flex align-items-center'>
                     <a href={recommendations[0].external_urls.spotify}>
-                      <img src={recommendations[0].album.images[0].url} class="d-block w-100" alt="..."></img>
+                      <Image src={recommendations[0].album.images[0].url} class="d-block w-100" alt="..." width={600} height={600}></Image>
                     </a>
                     <div class="vstack gap-3">
                       <h6 className='text-white ms-3 p-2'>{recommendations[0].name}</h6>
@@ -42,7 +43,7 @@ const Recommend = ({recommendations}) => {
                 <div class="carousel-item">
                   <div className='d-flex align-items-center'>
                     <a href={recommendations[1].external_urls.spotify}>
-                      <img src={recommendations[1].album.images[0].url} class="d-block w-100" alt="..."></img>
+                      <Image src={recommendations[1].album.images[0].url} class="d-block w-100" alt="..." width={600} height={600}></Image>
                     </a>
                     <div class="vstack gap-3">
                       <h6 className='text-white ms-3 p-2'>{recommendations[1].name}</h6>
@@ -59,7 +60,7 @@ const Recommend = ({recommendations}) => {
                 <div class="carousel-item">
                   <div className='d-flex align-items-center'>
                     <a href={recommendations[2].external_urls.spotify}>
-                      <img src={recommendations[2].album.images[0].url} class="d-block w-100" alt="..."></img>
+                      <Image src={recommendations[2].album.images[0].url} class="d-block w-100" alt="..." width={600} height={600}></Image>
                     </a>
                     <div class="vstack gap-3">
                       <h6 className='text-white ms-3 p-2'>{recommendations[2].name}</h6>
@@ -76,7 +77,7 @@ const Recommend = ({recommendations}) => {
                 <div class="carousel-item">
                   <div className='d-flex align-items-center'>
                     <a href={recommendations[3].external_urls.spotify}>
-                      <img src={recommendations[3].album.images[0].url} class="d-block w-100" alt="..."></img>
+                      <Image src={recommendations[3].album.images[0].url} class="d-block w-100" alt="..." width={600} height={600}></Image>
                     </a>
                     <div class="vstack gap-3">
                       <h6 className='text-white ms-3 p-2'>{recommendations[3].name}</h6>
@@ -94,7 +95,7 @@ const Recommend = ({recommendations}) => {
                 <div class="carousel-item">
                   <div className='d-flex align-items-center'>
                     <a href={recommendations[4].external_urls.spotify}>
-                      <img src={recommendations[4].album.images[0].url} class="d-block w-100" alt="..."></img>
+                      <Image src={recommendations[4].album.images[0].url} class="d-block w-100" alt="..." width={600} height={600}></Image>
                     </a>
                     <div class="vstack gap-3">
                       <h6 className='text-white ms-3 p-2'>{recommendations[4].name}</h6>

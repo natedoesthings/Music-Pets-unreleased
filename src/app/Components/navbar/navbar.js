@@ -1,5 +1,6 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import Image from "next/image";
 
 const NavBar = ({image, profile, name}) => {
 
@@ -41,7 +42,7 @@ const NavBar = ({image, profile, name}) => {
           <div class="image-text">
             <span class="image">
               <a href={profile}>
-              <img src={image} alt="Profile Picture"></img>
+              <Image src={image} alt="Profile Picture" width={100} height={42}></Image>
               </a>
             </span>
             <div class="text logo-text">

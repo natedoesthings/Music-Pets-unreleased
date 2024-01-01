@@ -12,7 +12,7 @@ const Dashboard = ({ func, token }) => {
   const [profile, setProfile] = useState('');
   const [artists, setArtists] = useState([])
   const [tracks, setTracks] = useState([])
-  const [trackIds, setTrackIds] = useState([])
+  const [recommendations, setRecommendations] = useState([])
 
 
 
@@ -25,7 +25,7 @@ const Dashboard = ({ func, token }) => {
     })
 
     const data = await result.json();
-    console.log(data)
+    //console.log(data)
     setName(data.display_name)
     setImg(data.images[1].url)
     setProfile(data.external_urls.spotify)
@@ -44,30 +44,28 @@ const Dashboard = ({ func, token }) => {
     })
 
     const data = await result.json();
-    console.log(data)
+    //console.log(data)
     setTracks(data.items)
-    console.log(tracks)
+    //console.log(tracks)
 
     let temp = []
     for (let i = 0; i < 5; ++i) {
       temp.push(data.items[i].id)
     }
 
-    const getRecommendations = async () => {
+    
 
-      const result = await fetch(`https://api.spotify.com/v1/recommendations?limit=5&seed_tracks=${temp.join(',')}`, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
+    const result1 = await fetch(`https://api.spotify.com/v1/recommendations?limit=5&seed_tracks=${temp.join(',')}`, {
+      method: 'GET',
+      headers: { 'Authorization': 'Bearer ' + token }
 
-      })
+    })
 
-      const data = await result.json();
-      console.log(data)
-      setRecommendations(data.tracks)
+    const data1 = await result1.json();
+    console.log(data1)
+    setRecommendations(data1.tracks)
 
-    }
-
-    getRecommendations();
+   
 
   }
 
@@ -82,15 +80,13 @@ const Dashboard = ({ func, token }) => {
     })
 
     const data = await result.json();
-    console.log(data)
+    //console.log(data)
     setArtists(data.items)
 
   }
 
 
-  const [recommendations, setRecommendations] = useState([])
-
-
+  
 
 
 
@@ -138,8 +134,8 @@ const Dashboard = ({ func, token }) => {
   }, [artists]);
 
 
-  console.log(genreCounts)
-  console.log(recommendations)
+  //console.log(genreCounts)
+ // console.log(recommendations)
   return (
     <main>
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
