@@ -1,0 +1,9 @@
+.waitlist {
+  width: 50%;
+  display: flex;
+
+}
+
+.waitlist input {
+  color: blue;
+}

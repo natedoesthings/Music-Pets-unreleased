@@ -3,6 +3,7 @@
 body {
   background-color: darkslategray;
 }
+
 .main {
   background: darkslategrey;
 }
@@ -30,3 +31,7 @@ body {
 
 }
 
+.formPosition {
+  position: relative;
+  top: 275px
+}

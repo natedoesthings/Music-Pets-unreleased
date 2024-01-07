@@ -1,6 +1,6 @@
 'use client'
 import { useEffect } from 'react';
-import './loader.css'
+import '@/styles/loader.css'
 
 const Loader = () => {
   useEffect(() => {

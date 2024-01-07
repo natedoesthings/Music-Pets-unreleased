@@ -1,11 +1,25 @@
+'use client'
 import Link from "next/link"
-import './before.css'
+import '@/styles/homescreen.css'
+import WaitlistForm from "./waitlist"
+import { useEffect } from "react"
 
-const HomeScreen = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE}) => {
+const HomeScreen = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE,loggedIn, logOut}) => {
+  useEffect(() => {
+    if(!loggedIn) {
+
+      logOut();
+    }
+  }, [])
+
+  function restartPage() {
+    window.location.reload(true)
+  } 
+
   return (
 
     <main className="main">
-      <nav className="z-0 navbar navbar-expand-lg fixed-top" style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
+      <nav className="z-0 navbar navbar-expand-lg fixed-top" style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', zIndex: 100}}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">MusicPets.io</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,6 +32,9 @@ const HomeScreen = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE})
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" href="#scrollspyHeading2">Contact</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" href="#scrollspyHeading3">Waitlist</Link>
               </li>
             </ul>
             <Link href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}
@@ -80,6 +97,12 @@ const HomeScreen = ({AUTH_ENDPOINT, CLIENT_ID,REDIRECT_URI,RESPONSE_TYPE,SCOPE})
 
           In conclusion, storytelling is a thread that weaves through the fabric of human existence, connecting us, shaping our identities, and fostering empathy. It's a potent tool that educates, inspires, and unites, reminding us of our shared humanity. Embracing the diversity of stories enriches our lives, broadens our understanding, and ultimately propels us toward a more empathetic and interconnected world.
         </p>
+
+        <h1 id="scrollspyHeading3" className="display-2 text-white text-mid invisible">Waitlist</h1>
+        <div className="formPosition">
+        <WaitlistForm func={restartPage}/>
+        </div>
+       
 
       </div>
 

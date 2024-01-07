@@ -2,8 +2,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import HomeScreen from "./homescreen/homescreen"
-import Dashboard from "./dashboard/dashboard";
+import HomeScreen from "./homescreen"
+import Dashboard from "./dashboard";
 
 
 const GetToken = ({ CLIENT_ID, AUTH_ENDPOINT, REDIRECT_URI, RESPONSE_TYPE, SCOPE }) => {
@@ -54,6 +54,8 @@ const GetToken = ({ CLIENT_ID, AUTH_ENDPOINT, REDIRECT_URI, RESPONSE_TYPE, SCOPE
           REDIRECT_URI={REDIRECT_URI}
           RESPONSE_TYPE={RESPONSE_TYPE}
           SCOPE={SCOPE}
+          loggedIn={true}
+          logOut={logout}
         /> :
         <main>
           <Dashboard 

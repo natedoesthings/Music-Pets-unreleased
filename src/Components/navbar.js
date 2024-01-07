@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from "react";
 import Image from "next/image";
+import '@/styles/navbar.css'
 
 const NavBar = ({image, profile, name}) => {
 
@@ -55,39 +56,39 @@ const NavBar = ({image, profile, name}) => {
           <div class="menu">
             <ul class="menu-links">
               <li class="nav-link">
-                <a href="#">
+                <a href="/">
                   <i class='bx bx-home-alt icon' ></i>
                   <span class="text nav-text">Dashboard</span>
                 </a>
               </li>
               <li class="nav-link">
-                <a href="#">
+                <a href="/pet-profile">
                   <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                  <span class="text nav-text">Revenue</span>
+                  <span class="text nav-text">Pet-Profile</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a href="#">
-                  <i class='bx bx-bell icon'></i>
-                  <span class="text nav-text">Notifications</span>
+                  <i class='bx bx-no-entry icon'></i>
+                  <span class="text nav-text">Placeholder</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a href="#">
-                  <i class='bx bx-pie-chart-alt icon' ></i>
-                  <span class="text nav-text">Analytics</span>
+                <i class='bx bx-no-entry icon'></i>
+                  <span class="text nav-text">Placeholder</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a href="#">
-                  <i class='bx bx-heart icon' ></i>
-                  <span class="text nav-text">Likes</span>
+                <i class='bx bx-no-entry icon'></i>
+                  <span class="text nav-text">Placeholder</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a href="#">
-                  <i class='bx bx-wallet icon' ></i>
-                  <span class="text nav-text">Wallets</span>
+                <i class='bx bx-no-entry icon'></i>
+                  <span class="text nav-text">Placeholder</span>
                 </a>
               </li>
             </ul>

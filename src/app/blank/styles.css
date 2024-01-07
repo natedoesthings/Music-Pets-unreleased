@@ -5,18 +5,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
 }
 
 
 
 :root{
     /* ===== Colors ===== */
-    --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
-    --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #707070;
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -37,12 +38,12 @@ body{
 }
 
 body.dark{
-    --body-color: #18191a;
-    --sidebar-color: #242526;
-    --primary-color: #3a3b3c;
-    --primary-color-light: #3a3b3c;
-    --toggle-color: #fff;
-    --text-color: #ccc;
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: darkslategray;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
 }
 
 /* ===== Sidebar ===== */

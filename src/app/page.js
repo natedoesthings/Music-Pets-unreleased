@@ -1,6 +1,6 @@
-import GetToken from './Components/getToken'
-import Loader from './Components/loader/loader';
-import './styles.css'
+import GetToken from '../Components/getToken'
+import Loader from '../Components/loader';
+import '@/styles/root.css'
 
 
 
@@ -21,9 +21,6 @@ export default function Home() {
             RESPONSE_TYPE={process.env.RESPONSE_TYPE}
             AUTH_ENDPOINT={process.env.AUTH_ENDPOINT}
             SCOPE={process.env.SCOPE} />
-
-
-          <Loader />
 
         </main>
 
