@@ -3,7 +3,7 @@ import NavBar from "../../Components/navbar"
 import "./styles.css"
 
 const Pet = () => {
-  if(typeof window !== undefined) {
+  if (typeof window !== 'undefined') {
     if(!window.localStorage.getItem('token')) {
       window.location.replace('http://localhost:3000/login')
     }
